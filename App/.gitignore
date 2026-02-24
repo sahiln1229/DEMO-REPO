@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+*.pem
+
+# Add any other files or directories that should be ignored
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
