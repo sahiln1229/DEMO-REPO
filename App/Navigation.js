@@ -8,6 +8,11 @@ import RegisterScreen from './screens/RegisterScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProgressScreen from './screens/ProgressScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import CertificatePage from './screens/CertificatePage';
+import CertificateDownloadPage from './screens/CertificateDownloadPage';
+import ChapterGamesScreen from './screens/ChapterGamesScreen';
+import GameScreen from './screens/GameScreen';
+import GameResultScreen from './screens/GameResultScreen';
 
 const Stack = createStackNavigator();
 
@@ -62,6 +67,33 @@ const Navigation = () => {
           options={{
             animationTypeForReplace: 'push',
           }}
+        />
+        <Stack.Screen
+          name="Certificate"
+          component={CertificatePage}
+          options={{
+            animationTypeForReplace: 'push',
+          }}
+        />
+        <Stack.Screen
+          name="CertificateDownload"
+          component={CertificateDownloadPage}
+          options={{ animationTypeForReplace: 'push' }}
+        />
+        <Stack.Screen
+          name="ChapterGames"
+          component={ChapterGamesScreen}
+          options={{ animationTypeForReplace: 'push' }}
+        />
+        <Stack.Screen
+          name="Game"
+          component={GameScreen}
+          options={{ animationTypeForReplace: 'push' }}
+        />
+        <Stack.Screen
+          name="GameResult"
+          component={GameResultScreen}
+          options={{ animationTypeForReplace: 'push' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

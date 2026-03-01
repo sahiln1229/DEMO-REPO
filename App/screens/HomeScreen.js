@@ -15,11 +15,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../context/ThemeContext';
+import { useProgress } from '../context/ProgressContext';
 import { MaterialCommunityIcons, Ionicons, FontAwesome5 } from '@expo/vector-icons';
 
 
 const HomeScreen = ({ navigation, route }) => {
   const { width } = useWindowDimensions();
+  const { getChapterProgress } = useProgress();
 
   // Get username from navigation params, fallback to default
   const { username } = route.params || { username: 'Guest' };
@@ -69,49 +71,44 @@ const HomeScreen = ({ navigation, route }) => {
   const chapters = [
     {
       id: 1,
-      iconName: 'trash', // Ionicons
+      iconName: 'trash',
       iconType: 'Ionicons',
       title: 'wasteDisposal',
       description: 'Proper disposal/segregation of...',
       games: 3,
       gradient: ['#FF512F', '#DD2476'],
-      progress: 65,
       duration: '15 min',
     },
     {
       id: 2,
-      iconName: 'water', // Ionicons
+      iconName: 'water',
       iconType: 'Ionicons',
       title: 'bloodSpillage',
       description: 'Clean up procedures for blood',
       games: 3,
       gradient: ['#8E2DE2', '#4A00E0'],
-      progress: 40,
       duration: '12 min',
     },
     {
       id: 3,
-      iconName: 'flask', // Ionicons
+      iconName: 'flask',
       iconType: 'Ionicons',
       title: 'chemicalSpillage',
       description: 'Handling chemical spills safely',
       games: 3,
       gradient: ['#11998e', '#38ef7d'],
-      progress: 80,
       duration: '10 min',
     },
     {
       id: 4,
-      iconName: 'shield-alt', // FontAwesome5
+      iconName: 'shield-alt',
       iconType: 'FontAwesome5',
       title: 'wearingPPE',
       description: 'Understanding PPE usage',
       games: 3,
       gradient: ['#4FACFE', '#00F2FE'],
-      progress: 25,
       duration: '18 min',
     },
-
   ];
 
   const renderIcon = (type, name) => {
@@ -235,7 +232,7 @@ const HomeScreen = ({ navigation, route }) => {
 
         {/* QUICK ACTIONS */}
         <View style={styles.quickActionsContainer}>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={[styles.quickActionButton, { backgroundColor: theme.card }]}
             onPress={() => navigation.navigate('Profile')}
           >
@@ -245,7 +242,7 @@ const HomeScreen = ({ navigation, route }) => {
             <Text style={[styles.quickActionText, { color: theme.text }]}>My Profile</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={[styles.quickActionButton, { backgroundColor: theme.card }]}
             onPress={() => navigation.navigate('Progress')}
           >
@@ -255,8 +252,9 @@ const HomeScreen = ({ navigation, route }) => {
             <Text style={[styles.quickActionText, { color: theme.text }]}>Progress</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={[styles.quickActionButton, { backgroundColor: theme.card }]}
+            onPress={() => navigation.navigate('Certificate')}
           >
             <View style={[styles.quickActionIcon, { backgroundColor: '#FFF3E0' }]}>
               <MaterialCommunityIcons name="certificate" size={20} color="#FF9800" />
@@ -264,7 +262,7 @@ const HomeScreen = ({ navigation, route }) => {
             <Text style={[styles.quickActionText, { color: theme.text }]}>Certificate</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={[styles.quickActionButton, { backgroundColor: theme.card }]}
           >
             <View style={[styles.quickActionIcon, { backgroundColor: '#FCE4EC' }]}>
@@ -288,15 +286,24 @@ const HomeScreen = ({ navigation, route }) => {
 
         {/* CARDS GRID */}
         <View style={styles.gridContainer}>
-          {chapters.map((chapter) => (
+          {chapters.map((chapter) => {
+            const liveProgress = getChapterProgress(chapter.id);
+            return (
             <TouchableOpacity
               key={chapter.id}
               style={[
                 styles.cardContainer,
-                { width: cardWidth, height: cardWidth * 1.5, backgroundColor: theme.card } // Dynamic Width & Aspect Ratio
+                { width: cardWidth, height: cardWidth * 1.5, backgroundColor: theme.card }
               ]}
               activeOpacity={0.9}
-            >
+                onPress={() =>
+                  navigation.navigate('ChapterGames', {
+                    chapterId: chapter.id,
+                    chapterTitle: t(chapter.title.replace(/ /g, '').replace(/[^a-zA-Z]/g, '')) || chapter.title,
+                    gradient: chapter.gradient,
+                  })
+                }
+              >
               <LinearGradient
                 colors={chapter.gradient}
                 start={{ x: 0, y: 0 }}
@@ -305,7 +312,7 @@ const HomeScreen = ({ navigation, route }) => {
               >
                 {/* Progress Badge */}
                 <View style={styles.progressBadge}>
-                  <Text style={styles.progressBadgeText}>{chapter.progress}%</Text>
+                  <Text style={styles.progressBadgeText}>{liveProgress}%</Text>
                 </View>
 
                 {/* Icon Circle */}
@@ -319,7 +326,7 @@ const HomeScreen = ({ navigation, route }) => {
                 {/* Text Content */}
                 <View style={styles.cardContent}>
                   <Text style={styles.cardTitle}>{t(chapter.title.replace(/ /g, '').replace(/[^a-zA-Z]/g, '')) || chapter.title}</Text>
-                  
+
                   {/* Duration and Games Info */}
                   <View style={styles.cardInfo}>
                     <View style={styles.cardInfoItem}>
@@ -334,16 +341,26 @@ const HomeScreen = ({ navigation, route }) => {
                 </View>
 
                 {/* Start Button */}
-                <TouchableOpacity style={styles.startButton}>
+                <TouchableOpacity
+                    style={styles.startButton}
+                    onPress={() =>
+                      navigation.navigate('ChapterGames', {
+                        chapterId: chapter.id,
+                        chapterTitle: t(chapter.title.replace(/ /g, '').replace(/[^a-zA-Z]/g, '')) || chapter.title,
+                        gradient: chapter.gradient,
+                      })
+                    }
+                  >
                   <Text style={styles.startButtonText}>
-                    {chapter.progress > 0 ? 'Continue' : 'Start'}
+                    {liveProgress > 0 ? 'Continue' : 'Start'}
                   </Text>
                   <Ionicons name="arrow-forward" size={14} color={chapter.gradient[0]} />
                 </TouchableOpacity>
 
               </LinearGradient>
             </TouchableOpacity>
-          ))}
+            );
+          })}
         </View>
         <View style={{ height: 40 }} />
       </ScrollView>
