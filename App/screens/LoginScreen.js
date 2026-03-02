@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [focusedInput, setFocusedInput] = useState(null);
-  
+
   const { t } = useTranslation();
   const { theme } = useTheme();
 
@@ -71,9 +71,9 @@ const LoginScreen = ({ navigation }) => {
               {/* Email Input */}
               <View style={[
                 styles.inputWrapper,
-                { 
-                  backgroundColor: theme.background, 
-                  borderColor: focusedInput === 'email' ? theme.primary : theme.background 
+                {
+                  backgroundColor: theme.background,
+                  borderColor: focusedInput === 'email' ? theme.primary : theme.background
                 }
               ]}>
                 <Ionicons name="mail-outline" size={20} color={theme.textSecondary} style={styles.inputIcon} />
@@ -93,9 +93,9 @@ const LoginScreen = ({ navigation }) => {
               {/* Password Input */}
               <View style={[
                 styles.inputWrapper,
-                { 
-                  backgroundColor: theme.background, 
-                  borderColor: focusedInput === 'password' ? theme.primary : theme.background 
+                {
+                  backgroundColor: theme.background,
+                  borderColor: focusedInput === 'password' ? theme.primary : theme.background
                 }
               ]}>
                 <Ionicons name="lock-closed-outline" size={20} color={theme.textSecondary} style={styles.inputIcon} />
@@ -110,10 +110,10 @@ const LoginScreen = ({ navigation }) => {
                   onBlur={() => setFocusedInput(null)}
                 />
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
-                  <Ionicons 
-                    name={showPassword ? 'eye-outline' : 'eye-off-outline'} 
-                    size={20} 
-                    color={theme.textSecondary} 
+                  <Ionicons
+                    name={showPassword ? 'eye-outline' : 'eye-off-outline'}
+                    size={20}
+                    color={theme.textSecondary}
                   />
                 </TouchableOpacity>
               </View>
@@ -148,6 +148,15 @@ const LoginScreen = ({ navigation }) => {
                 <Text style={[styles.linkHighlight, { color: theme.primary }]}>{t('registerTitle')}</Text>
               </TouchableOpacity>
             </View>
+
+            {/* Super Admin Portal */}
+            <TouchableOpacity
+              style={styles.adminPortalBtn}
+              onPress={() => navigation.navigate('AdminDashboard')}
+              activeOpacity={0.8}
+            >
+              <Text style={styles.adminPortalText}>👑 Super Admin Portal →</Text>
+            </TouchableOpacity>
           </View>
 
         </ScrollView>
@@ -281,6 +290,22 @@ const styles = StyleSheet.create({
   linkHighlight: {
     fontSize: 14,
     fontWeight: 'bold',
+  },
+  adminPortalBtn: {
+    marginTop: 20,
+    alignSelf: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    backgroundColor: '#2D356115',
+    borderWidth: 1.5,
+    borderColor: '#2D356130',
+  },
+  adminPortalText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#2D3561',
+    letterSpacing: 0.3,
   },
 });
 
