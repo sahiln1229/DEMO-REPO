@@ -118,14 +118,14 @@ export default function AdminAdminsScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
     content: { padding: 20, paddingBottom: 40 },
 
     topRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
-    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D3561' },
+    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D2D2D' },
     addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 9, borderRadius: 12 },
     addText: { color: '#FFF', fontWeight: '700', fontSize: 13 },
 
@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
     adminAvatar: { width: 50, height: 50, borderRadius: 14, justifyContent: 'center', alignItems: 'center', marginRight: 14 },
     adminAvatarText: { color: '#FFF', fontWeight: 'bold', fontSize: 20 },
     adminInfo: { flex: 1 },
-    adminName: { fontSize: 15, fontWeight: '700', color: '#2D3561', marginBottom: 2 },
+    adminName: { fontSize: 15, fontWeight: '700', color: '#2D2D2D', marginBottom: 2 },
     adminEmail: { fontSize: 12, color: '#999', marginBottom: 6 },
     deptBadge: { alignSelf: 'flex-start', borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 },
     deptText: { color: '#F953C6', fontSize: 11, fontWeight: '700' },
     adminRight: { alignItems: 'center' },
 
     permsPanel: { backgroundColor: '#F8F9FF', borderTopWidth: 1, borderTopColor: '#EAEEFF', padding: 16 },
-    permsTitle: { fontSize: 13, fontWeight: '700', color: '#2D3561', marginBottom: 12 },
+    permsTitle: { fontSize: 13, fontWeight: '700', color: '#2D2D2D', marginBottom: 12 },
     permRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 8, borderBottomWidth: 1, borderBottomColor: '#EAEEFF' },
     permLabel: { flex: 1, fontSize: 13, color: '#333', fontWeight: '500' },
 
@@ -153,3 +153,5 @@ const styles = StyleSheet.create({
     iconBtn: { flexDirection: 'row', alignItems: 'center', gap: 5, paddingHorizontal: 14, paddingVertical: 8, borderRadius: 10 },
     iconBtnText: { fontSize: 13, fontWeight: '600' },
 });
+
+

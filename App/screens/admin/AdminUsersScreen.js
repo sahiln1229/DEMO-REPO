@@ -129,7 +129,7 @@ export default function AdminUsersScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
         shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.08, shadowRadius: 12, elevation: 4,
     },
     tableRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 16 },
-    tableHeader: { backgroundColor: '#2D3561' },
+    tableHeader: { backgroundcolor: '#2D2D2D' },
     tableRowAlt: { backgroundColor: '#F8F9FF' },
     headerCell: { color: '#FFF', fontWeight: '700', fontSize: 12 },
     col: { paddingHorizontal: 4 },
@@ -179,3 +179,5 @@ const styles = StyleSheet.create({
     statusText: { fontSize: 11, fontWeight: '700' },
     actionBtn: { width: 28, height: 28, borderRadius: 7, justifyContent: 'center', alignItems: 'center' },
 });
+
+

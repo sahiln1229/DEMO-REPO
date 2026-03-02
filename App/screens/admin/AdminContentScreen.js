@@ -116,19 +116,19 @@ export default function AdminContentScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
     content: { padding: 20, paddingBottom: 40 },
 
     topRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
-    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D3561' },
+    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D2D2D' },
     addBtn: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, paddingVertical: 9, borderRadius: 12 },
     addText: { color: '#FFF', fontWeight: '700', fontSize: 13 },
 
     filterChip: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 20, backgroundColor: '#FFF', marginRight: 8, borderWidth: 1.5, borderColor: '#EAEEFF' },
-    filterChipActive: { backgroundColor: '#2D3561', borderColor: '#2D3561' },
+    filterChipActive: { backgroundcolor: '#2D2D2D', bordercolor: '#2D2D2D' },
     filterText: { fontSize: 13, fontWeight: '600', color: '#999' },
     filterTextActive: { color: '#FFF' },
 
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     catStrip: { width: 5 },
     cardBody: { flex: 1, padding: 14 },
     cardTop: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 12 },
-    contentTitle: { fontSize: 14, fontWeight: '700', color: '#2D3561', marginBottom: 8, lineHeight: 20 },
+    contentTitle: { fontSize: 14, fontWeight: '700', color: '#2D2D2D', marginBottom: 8, lineHeight: 20 },
     metaRow: { flexDirection: 'row', alignItems: 'center' },
     catBadge: { borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 },
     catText: { fontSize: 11, fontWeight: '700' },
@@ -151,3 +151,5 @@ const styles = StyleSheet.create({
     actionBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingHorizontal: 10, paddingVertical: 6, borderRadius: 8 },
     actionText: { fontSize: 12, fontWeight: '600' },
 });
+
+

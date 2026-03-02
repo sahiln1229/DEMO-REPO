@@ -44,7 +44,7 @@ export default function AdminSettingsScreen({ navigation }) {
             title: '⚙ System',
             items: [
                 { key: 'maintenanceMode', label: 'Maintenance Mode', sub: 'Show maintenance page to users', icon: 'construct', color: '#FA8231' },
-                { key: 'darkMode', label: 'Dark Mode', sub: 'Enable dark UI for all users', icon: 'moon', color: '#2D3561' },
+                { key: 'darkMode', label: 'Dark Mode', sub: 'Enable dark UI for all users', icon: 'moon', color: '#2D2D2D' },
             ],
         },
     ];
@@ -129,7 +129,7 @@ export default function AdminSettingsScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     profileCard: {
         borderRadius: 20, padding: 20, flexDirection: 'row', alignItems: 'center',
         marginBottom: 20,
-        shadowColor: '#2D3561', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.3, shadowRadius: 16, elevation: 10,
+        shadowcolor: '#2D2D2D', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.3, shadowRadius: 16, elevation: 10,
     },
     profileAvatar: { width: 60, height: 60, borderRadius: 18, justifyContent: 'center', alignItems: 'center' },
     profileAvatarText: { color: '#FFF', fontWeight: 'bold', fontSize: 22 },
@@ -151,12 +151,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF', borderRadius: 18, padding: 16, marginBottom: 16,
         shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.08, shadowRadius: 12, elevation: 4,
     },
-    groupTitle: { fontSize: 14, fontWeight: '700', color: '#2D3561', marginBottom: 12 },
+    groupTitle: { fontSize: 14, fontWeight: '700', color: '#2D2D2D', marginBottom: 12 },
     settingRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10 },
     rowDivider: { borderBottomWidth: 1, borderBottomColor: '#F0F2FF' },
     settingIcon: { width: 38, height: 38, borderRadius: 11, justifyContent: 'center', alignItems: 'center', marginRight: 12 },
     settingInfo: { flex: 1 },
-    settingLabel: { fontSize: 13, fontWeight: '600', color: '#2D3561', marginBottom: 2 },
+    settingLabel: { fontSize: 13, fontWeight: '600', color: '#2D2D2D', marginBottom: 2 },
     settingSub: { fontSize: 11, color: '#999' },
 
     dangerRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10 },
@@ -165,3 +165,5 @@ const styles = StyleSheet.create({
     saveBtn: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 16, borderRadius: 16 },
     saveBtnText: { color: '#FFF', fontWeight: '700', fontSize: 15 },
 });
+
+

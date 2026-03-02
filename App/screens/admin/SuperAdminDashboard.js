@@ -125,7 +125,7 @@ export default function SuperAdminDashboard({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     dateText: { fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 2 },
     timeText: { fontSize: 20, fontWeight: '700', color: '#FFF' },
 
-    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D3561', marginBottom: 14, marginTop: 4 },
+    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#2D2D2D', marginBottom: 14, marginTop: 4 },
 
     cardsRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 14, marginBottom: 24 },
     cardWrap: { flex: 1, minWidth: 140 },
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.08, shadowRadius: 8, elevation: 4,
     },
     quickIcon: { width: 48, height: 48, borderRadius: 14, justifyContent: 'center', alignItems: 'center', marginBottom: 8 },
-    quickLabel: { fontSize: 12, fontWeight: '600', color: '#2D3561', textAlign: 'center' },
+    quickLabel: { fontSize: 12, fontWeight: '600', color: '#2D2D2D', textAlign: 'center' },
 
     activityCard: {
         backgroundColor: '#FFF', borderRadius: 20, padding: 16,
@@ -175,6 +175,8 @@ const styles = StyleSheet.create({
     activityRow: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
     activityIcon: { width: 38, height: 38, borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 12 },
     activityInfo: { flex: 1 },
-    activityText: { fontSize: 13, fontWeight: '600', color: '#2D3561' },
+    activityText: { fontSize: 13, fontWeight: '600', color: '#2D2D2D' },
     activityTime: { fontSize: 11, color: '#999', marginTop: 2 },
 });
+
+

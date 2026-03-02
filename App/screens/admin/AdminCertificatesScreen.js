@@ -126,7 +126,7 @@ export default function AdminCertificatesScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F0F2FF' },
+    root: { flex: 1, flexDirection: 'row', backgroundColor: '#F4F6FA' },
     main: { flex: 1 },
     mainShifted: { marginLeft: isWeb ? 240 : 0 },
     scroll: { flex: 1 },
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
 
     tabsRow: { flexDirection: 'row', backgroundColor: '#FFF', borderRadius: 12, padding: 4, marginBottom: 16, gap: 4 },
     tab: { flex: 1, paddingVertical: 8, borderRadius: 9, alignItems: 'center' },
-    tabActive: { backgroundColor: '#2D3561' },
+    tabActive: { backgroundcolor: '#2D2D2D' },
     tabText: { fontSize: 12, fontWeight: '600', color: '#999' },
     tabTextActive: { color: '#FFF' },
 
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     certHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
     certAvatar: { width: 46, height: 46, borderRadius: 13, justifyContent: 'center', alignItems: 'center', marginRight: 12 },
     certAvatarText: { color: '#FFF', fontWeight: 'bold', fontSize: 18 },
-    certName: { fontSize: 15, fontWeight: '700', color: '#2D3561', marginBottom: 4 },
+    certName: { fontSize: 15, fontWeight: '700', color: '#2D2D2D', marginBottom: 4 },
     certCourse: { fontSize: 12, color: '#667EEA', fontWeight: '600' },
     statusBadge: { flexDirection: 'row', alignItems: 'center', borderRadius: 20, paddingHorizontal: 10, paddingVertical: 5 },
     statusText: { fontSize: 11, fontWeight: '700' },
@@ -166,3 +166,5 @@ const styles = StyleSheet.create({
     actionBtn: { flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 6, paddingVertical: 10, borderRadius: 12 },
     actionBtnText: { color: '#FFF', fontWeight: '700', fontSize: 14 },
 });
+
+
